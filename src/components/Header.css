@@ -1,166 +1,110 @@
-/* Product Range Section - Images Perfect Show */
-.product-range-section {
-  padding: 80px 20px;
-  background-color: #ffffff;
-  text-align: center;
-}
+/* ================= HEADER ================= */
 
-.product-header {
-  margin-bottom: 60px;
-}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-.product-subtitle {
-  display: block;
-  color: #e91e63;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
-}
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 
-.product-header h2 {
-  font-size: 48px;
-  color: #333;
-  font-weight: 700;
-  margin: 0;
-}
-
-.product-carousel {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 50px; /* Arrows ke liye better space */
-}
-
-.product-item {
-  padding: 30px 15px;
-  outline: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+
+  padding: 16px 20px;
 }
 
-.product-box {
-  width: 100%;
+/* Logo */
+.logo {
+  height: 46px;
+}
+
+/* ================= HAMBURGER ================= */
+
+.menu-toggle {
+  display: none;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #1f4fd8;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* ================= NAV ================= */
+
+.nav-links {
   display: flex;
-  justify-content: center;
-  margin-bottom: 25px;
+  gap: 32px;
+  align-items: center;
 }
 
-.product-img {
-  width: 100%;
-  max-width: 320px;
-  height: 320px; /* Height badha di – images badi aur clear */
-  object-fit: contain; /* Full image dikhegi without crop */
-  border-radius: 24px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-  background: transparent; /* Background remove – clean look */
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.product-item:hover .product-img {
-  transform: scale(1.1) translateY(-10px);
-  box-shadow: 0 25px 50px rgba(233, 30, 99, 0.3);
-}
-
-.product-info {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.product-info h3 {
-  font-size: 26px;
-  color: #e91e63;
-  margin: 15px 0 8px;
-  font-weight: 700;
-}
-
-.product-info p {
-  font-size: 18px;
+.nav-links a {
+  text-decoration: none;
   color: #333;
-  margin: 0;
+  font-size: 17px;
   font-weight: 500;
-  line-height: 1.4;
 }
 
-/* Slick Dots Better Style */
-.product-carousel .slick-dots {
-  bottom: -60px;
-}
+/* ================= CONTACT BUTTON ================= */
 
-.product-carousel .slick-dots li button:before {
-  font-size: 14px;
-  color: #e91e63;
-  opacity: 0.6;
-}
-
-.product-carousel .slick-dots li.slick-active button:before {
-  color: #e91e63;
-  opacity: 1;
-}
-
-/* Arrows */
-.product-carousel .slick-prev,
-.product-carousel .slick-next {
-  width: 60px;
-  height: 60px;
-  background: rgba(233, 30, 99, 0.8);
-  border-radius: 50%;
-  backdrop-filter: blur(10px);
-}
-
-.product-carousel .slick-prev:hover,
-.product-carousel .slick-next:hover {
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background: #e91e63;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 16px;
+  text-decoration: none;
 }
 
-/* Mobile Fix for Images */
-@media (max-width: 992px) {
-  .product-img {
-    max-width: 280px;
-    height: 280px;
-  }
-  
-  .product-info h3 {
-    font-size: 24px;
-  }
-  
-  .product-info p {
-    font-size: 17px;
-  }
+.btn-icon {
+  font-size: 16px;
 }
+
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
-  .product-img {
-    max-width: 260px;
-    height: 260px;
-  }
-  
-  .product-info h3 {
-    font-size: 22px;
-  }
-  
-  .product-info p {
-    font-size: 16px;
-  }
-}
 
-@media (max-width: 576px) {
-  .product-carousel {
-    padding: 0 30px;
+  .menu-toggle {
+    display: block; /* show hamburger */
   }
-  
-  .product-img {
-    max-width: 240px;
-    height: 240px;
+
+  .desktop-only {
+    display: none; /* hide call button on mobile */
   }
-  
-  .product-info h3 {
-    font-size: 20px;
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+    background: #ffffff;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    padding: 20px 0;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+
+    display: none;
   }
-  
-  .product-info p {
-    font-size: 15px;
+
+  .nav-links.active {
+    display: flex;
   }
 }
