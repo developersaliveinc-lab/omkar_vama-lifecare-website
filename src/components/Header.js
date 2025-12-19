@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleRightClick = (e) => {
+    e.preventDefault(); // Prevent default browser context menu
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className="header">
+      {/* Logo */}
       <div className="logo-container">
         <img
           src="https://vamalifecare.aliveinc.in/images/Vama-Logo-300px.png"
@@ -14,17 +22,29 @@ const Header = () => {
         />
       </div>
 
-      <nav className="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
+      {/* Hamburger (MOBILE ONLY) */}
+      <button
+        className="menu-toggle"
+        onContextMenu={handleRightClick} // right-click triggers menu
+        aria-label="Toggle Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* Navigation */}
+      <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+        <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+        <a href="#products" onClick={() => setMenuOpen(false)}>Products</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
       </nav>
 
-      {/* Contact Button with Phone Icon */}
-      <a href="tel:9324245521" className="contact-btn">
+      {/* Contact Button (DESKTOP ONLY) */}
+      <a href="tel:917304044082" className="contact-btn desktop-only">
         <FontAwesomeIcon icon={faPhone} className="btn-icon" />
-        <span className="btn-text">91+7304044082</span>
+        <span className="btn-text">+91 7304044082</span>
       </a>
     </header>
   );
