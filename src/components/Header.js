@@ -6,6 +6,11 @@ import "./Header.css";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleRightClick = (e) => {
+    e.preventDefault(); // Prevent default browser context menu
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className="header">
       {/* Logo */}
@@ -20,7 +25,7 @@ const Header = () => {
       {/* Hamburger (MOBILE ONLY) */}
       <button
         className="menu-toggle"
-        onClick={() => setMenuOpen(!menuOpen)}
+        onContextMenu={handleRightClick} // right-click triggers menu
         aria-label="Toggle Menu"
       >
         <span></span>
