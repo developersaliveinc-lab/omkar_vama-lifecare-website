@@ -46,7 +46,6 @@
 .nav-links {
   display: flex;
   gap: 32px;
-  align-items: center;
 }
 
 .nav-links a {
@@ -56,34 +55,12 @@
   font-weight: 500;
 }
 
-/* ================= CONTACT BUTTON ================= */
-
-.contact-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #e91e63;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 50px;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.btn-icon {
-  font-size: 16px;
-}
-
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
 
   .menu-toggle {
-    display: block; /* show hamburger */
-  }
-
-  .desktop-only {
-    display: none; /* hide call button on mobile */
+    display: block;   /* ✅ show hamburger */
   }
 
   .nav-links {
@@ -101,10 +78,10 @@
     padding: 20px 0;
     box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 
-    display: none;
+    display: none;   /* hidden by default */
   }
 
   .nav-links.active {
-    display: flex;
+    display: flex;   /* show menu */
   }
 }
