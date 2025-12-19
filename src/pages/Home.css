@@ -285,7 +285,7 @@ body {
 }
 
 .stat-number {
-  font-size: 50px;
+  font-size: 0px;
   font-weight: 800;
   color: #333;
   margin-bottom: 10px;
@@ -1085,5 +1085,83 @@ body {
   
   .af-footer {
     font-size: 20px;
+  }
+}
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix all main containers to be centered */
+.welcome-container,
+.stats-container,
+.product-carousel,
+.af-grid,
+.tp-grid,
+.test-grid,
+.marquee-container,
+.pink-banner-container {
+  max-width: 1400px; /* or 100% for full width */
+  margin: 0 auto;     /* center content */
+  padding: 0 15px;    /* small padding inside */
+  box-sizing: border-box;
+}
+
+/* Ensure flex/grid children are centered */
+.welcome-container,
+.stats-container,
+.product-carousel,
+.af-grid,
+.tp-grid,
+.test-grid {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Ensure images do not overflow */
+img, .slide-content {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Center slider content */
+.slide-content {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 90%; /* optional to keep some spacing from edges */
+}
+
+/* Grid items inside should center text */
+.af-middle-box,
+.tp-item,
+.test-card {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Ensure marquee/pink banner content stays inside screen */
+.marquee-content,
+.pink-banner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Optional: prevent right side spacing in small screens */
+@media (max-width: 768px) {
+  .welcome-container,
+  .stats-container,
+  .product-carousel,
+  .af-grid,
+  .tp-grid,
+  .test-grid {
+    padding: 0 10px;
   }
 }
