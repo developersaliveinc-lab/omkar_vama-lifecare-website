@@ -7,7 +7,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleRightClick = (e) => {
-    e.preventDefault(); // Prevent default browser context menu
+    e.preventDefault(); // Prevent default context menu
     setMenuOpen(!menuOpen);
   };
 
@@ -22,10 +22,10 @@ const Header = () => {
         />
       </div>
 
-      {/* Hamburger (MOBILE ONLY) */}
+      {/* Hamburger Menu (Mobile only) */}
       <button
         className="menu-toggle"
-        onContextMenu={handleRightClick} // right-click triggers menu
+        onContextMenu={handleRightClick}
         aria-label="Toggle Menu"
       >
         <span></span>
@@ -41,7 +41,7 @@ const Header = () => {
         <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
       </nav>
 
-      {/* Contact Button (DESKTOP ONLY) */}
+      {/* Contact Button (Desktop only) */}
       <a href="tel:917304044082" className="contact-btn desktop-only">
         <FontAwesomeIcon icon={faPhone} className="btn-icon" />
         <span className="btn-text">+91 7304044082</span>
