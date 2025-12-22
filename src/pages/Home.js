@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Home.css";
 import Footer from "../components/Footer";  // <-- YEH LINE ADD KARO
 
+
 const Home = () => {
   const heroSettings = {
     dots: true,
